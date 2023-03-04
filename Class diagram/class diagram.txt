@@ -1,0 +1,45 @@
+@startuml
+class Camera{
+TakePhoto()
+SendPhoto()
+}
+
+class Robot {
+    int x
+int y
+forward()
+backward()
+right()
+left()
+stop()
+clean()
+startEngine()
+stopEngine()
+sendStatus()
+}
+
+class Graffiti{
+    int x
+int y
+}
+
+class Obstacle{
+    int x
+int y
+}
+
+class Server{
+int robotState
+findObstacle()
+findGraffiti()
+findRobot()
+imgToBmp()
+calculateRoute()
+transferRoute()
+}
+
+Camera <-- Robot
+Server <-- Camera
+Camera <-- Graffiti
+Camera <-- Obstacle
+@enduml
